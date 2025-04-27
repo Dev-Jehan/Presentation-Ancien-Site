@@ -1,0 +1,14 @@
+
+brands:
+  images:
+  - img: "/assets/images/partners/inria.svg"
+  - img: "/assets/images/partners/skydeck.svg"
+  - img: "/assets/images/partners/nvidia.webp"
+  - img: "/assets/images/partners/hope.webp"
+  - img: "/assets/images/partners/TUITO.webp"
+  - img: "/assets/images/partners/poool.webp"
+  - img: "/assets/images/partners/Thales.webp"
+  - img: "/assets/images/partners/pulse.webp"
+  - img: "/assets/images/partners/sonaide.webp"
+  - img: "/assets/images/partners/stationf.webp"
+  - img: "/assets/images/partners/RegionBretagne.webp"

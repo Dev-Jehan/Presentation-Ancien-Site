@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Skyld provides a SDK to secure on-device ML models against reverse-engineering">
+  <link rel="preload" as="image" href="/assets/images/art/bg_home.webp">
+  <link rel="shortcut icon" href="/assets/images/favicon.webp">
+  <title> Edge AI: Benefits, Applications and Risks </title>
+  <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/plugins.css">
+  <link rel="stylesheet" type="text/css" href="/assets/revolution/css/settings.css">
+  <link rel="stylesheet" type="text/css" href="/assets/revolution/css/layers.css">
+  <link rel="stylesheet" type="text/css" href="/assets/revolution/css/navigation.css">
+  <link rel="stylesheet" type="text/css" href="/assets/type/type.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+  <!--page wise css-->
+  
+  <!--/.page wise css-->
+  
+   <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-NXVH3Q2M');
+  </script>
+  <!-- End Google Tag Manager -->
+  
+</head>
+<body>
+  
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NXVH3Q2M" height="0" width="0" style="display:none;visibility:hidden" loading="lazy"></iframe>
+</noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <div class="content-wrapper">
+    <nav class="navbar  absolute transparent inverse-text nav-uppercase  navbar-hover-opacity navbar-expand-lg">
+  <div class=" container  flex-row justify-content-center">
+    <div class="navbar-brand">
+      <a href="http://localhost:4000">
+        
+        <img src="/assets/images/logo_skyld_blanc_top.png" srcset="/assets/images/logo_skyld_blanc_top.png 1x, /assets/images/logo_skyld_blanc_top.png 2x" class=" logo-light " alt="Skyld" loading="eager">
+        
+        <img src="/assets/images/logo_skyld_small.png" srcset="/assets/images/logo_skyld_small.png 1x, /assets/images/logo_skyld_small.png 2x" class=" logo-dark  " alt="Skyld" loading="eager">
+      </a>
+    </div>
+    <div class="navbar-other ml-auto order-lg-3">
+      <ul class="navbar-nav flex-row align-items-center" data-sm-skip="true">
+        <li class="nav-item">
+          <div class="navbar-hamburger d-lg-none d-xl-none ml-auto">
+            <button class="hamburger animate plain" data-toggle="offcanvas-nav"><span></span></button>
+          </div>
+        </li>
+        <li class="dropdown search-dropdown position-static nav-item">
+          <a href="#" role="button" class="collapse-toggle" data-toggle="collapse" data-target=".search-dropdown-menu" aria-haspopup="true" aria-expanded="false"><i class="jam jam-search"></i></a>
+          <div class="dropdown-menu search-dropdown-menu w-100 collapse">
+            <div class="form-wrapper">
+              <form class="inverse-text">
+                <input type="text" id="search-input" class="form-control" placeholder="Search blog posts..">
+                <i class="dropdown-close jam jam-close"></i>
+              </form>
+              <!-- /.search-form -->
+            </div>
+            <!-- /.form-wrapper -->
+            <ul id="results-container" class="position-static"></ul>
+          </div>
+        </li>
+        <li class="nav-item">
+<button class="plain" data-toggle="offcanvas-info"><i class="jam jam-info"></i></button>
+        </li>
+      </ul>
+      <!-- /.navbar-nav -->
+    </div>
+    <!-- /.navbar-other -->
+    <div class="navbar-collapse offcanvas-nav">
+      <div class="offcanvas-header d-lg-none d-xl-none">
+        <a href="http://localhost:4000">
+          <img src="/assets/images/logo_skyld_blanc_bottom.png" srcset="/assets/images/logo_skyld_blanc_bottom.png 1x, /assets/images/logo_skyld_blanc_top.png 2x" alt="Skyld" loading="eager"></a>
+        <button class="plain offcanvas-close offcanvas-nav-close"><i class="jam jam-close"></i></button>
+      </div>
+      <ul class="navbar-nav  mx-auto ">
+        
+          
+          
+          <li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" href="/">Home</a>
+            
+              <ul class="dropdown-menu">
+                
+                
+                
+                <li><a class="dropdown-item" href="/contact">Contact</a></li>
+                
+                
+              </ul>
+            
+          </li>
+          
+        
+          
+          
+          <li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" href="/blogs">Blog</a>
+            
+              <ul class="dropdown-menu">
+                
+                
+                
+                <li><a class="dropdown-item" href="/blogs/index-news">News</a></li>
+                
+                <li><a class="dropdown-item" href="/blogs/index-articles">Articles</a></li>
+                
+                
+              </ul>
+            
+          </li>
+          
+        
+      </ul>
+      <!-- /.navbar-nav -->
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container-fluid -->
+</nav>
+<!-- /.navbar -->
+<div class="offcanvas-info inverse-text">
+  <button class="plain offcanvas-close offcanvas-info-close"><i class="jam jam-close"></i></button>
+  <a href="http://localhost:4000">
+    <img src="/assets/images/logo_skyld_blanc_bottom.png" srcset="/assets/images/logo_skyld_blanc_bottom.png 1x, /assets/images/logo_skyld_blanc_top.png 2x" class=" logo-light " alt="Skyld" loading="eager">
+  </a>
+  <div class="space30"></div>
+  <p>Skyld provides a SDK to secure on-device ML models against reverse-engineering</p>
+  <div class="space20"></div>
+  <div class="widget">
+    <h5 class="widget-title">Contact Info</h5>
+    <address> 263 avenue du Général Leclerc 35700 Rennes<div class="space20"></div>
+      <a href="mailto:contact@skyld.io" class="nocolor"></a>
+    </address>
+  </div>
+  <!-- /.widget -->
+  <!--
+    <div class="widget">
+      
+      <h3 class="widget-title">Learn More</h3>
+      
+      <ul class="list-unstyled">
+        
+        <li><a href="#" class="nocolor">About Us</a></li>
+        
+        <li><a href="#" class="nocolor">Our Story</a></li>
+        
+        <li><a href="#" class="nocolor">Projects</a></li>
+        
+      </ul>
+    </div>
+  -->
+  <!-- /.widget -->
+
+  <div class="widget">
+    
+      <h3 class="widget-title">Our Newsletter</h3>
+    
+    
+      <p>Subscribe to our newsletter to get our news delivered to your inbox!</p>
+    
+    <div class="space10"></div>
+    <div class="newsletter-wrapper">
+        <div id="mc_embed_signup_scroll" class="input-group">
+          <a href="https://skyld.us21.list-manage.com/subscribe?u=015465c342fde2826f26b9627&amp;id=4dbeba2511">
+            <button type="submit" class="btn btn-rounded btn-default mr-0 mb-0 pull-right">
+              Subscribe
+            </button>
+          </a>
+        </div>
+    </div>
+    <!-- /.newsletter-wrapper -->
+  </div>
+  <!-- /.widget -->
+
+  <div class="widget">
+    
+    <h3 class="widget-title">Follow Us</h3>
+    
+    <ul class="social social-mute social-s ml-auto">
+      
+      <li><a href="https://www.linkedin.com/company/skylai/?viewAsMember=true"><img class="filter-white footer-icon" src="/assets/images/icons/linkedin.svg" loading="lazy"></a></li>
+      
+      <li><a href="https://twitter.com/SkyldAI"><img class="filter-white footer-icon" src="/assets/images/icons/twitter.svg" loading="lazy"></a></li>
+      
+      <li><a href="https://youtube.com/@SkyldAI-nv4qr?si=UIfXA8JyvToIfxAT"><img class="filter-white footer-icon" src="/assets/images/icons/youtube.svg" loading="lazy"></a></li>
+      
+      <li><a href="https://github.com/Skyld-Labs/"><img class="filter-white footer-icon" src="/assets/images/icons/github.svg" loading="lazy"></a></li>
+      
+    </ul>
+  </div>
+  <!-- /.widget -->
+</div>
+<!-- /.offcanvas-info -->
+<div class="wrapper image-wrapper bg-image page-title-wrapper inverse-text" data-image-src="/assets/images/art/bg_home.webp">
+  <div class="container inner text-center">
+    <div class="row">
+      <div class="col-md-8 mx-auto">
+        <div class="space90"></div>
+        <h1 class="page-title text-capitalize">Edge AI: Benefits, Applications and Risks</h1>
+      </div>
+    </div>
+    <!--/.row -->
+  </div>
+  <!-- /.container -->
+  <div class="divider">
+    <svg xmlns="http://www.w3.org/2000/svg" class="fill-light-wrapper" preserveaspectratio="none" viewbox="0 0 1070 52">
+      <path d="M0,52V0S247,91,505,32c261.17-59.72,565-13,565-13V52Z" transform="translate(0 1)"></path>
+    </svg>
+  </div>
+</div>
+ <!-- /.wrapper -->
+
+<div class="wrapper light-wrapper">
+  <div class="container inner pt-80">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        <div class="blog classic-view">
+          <div class="post mb-0">
+            
+            <figure class="rounded text-center">
+              <img src="/assets/images/blog/articles/edgeAI.webp" alt="Edge AI: Benefits, Applications and Risks" loading="lazy">
+            </figure>
+            
+            <div class="space40"></div>
+            <div class="post-content">
+              
+              <div class="category text-center">
+                <a href="/category/edge-ai" class="badge badge-pill bg-perso">Edge AI</a>
+              </div>
+              
+              <h2 class="post-title text-center">Edge AI: Benefits, Applications and Risks</h2>
+              <div class="meta text-center">
+                
+                 <span class="date"><i class="jam jam-clock"></i>02 May 2023</span>
+                
+                
+                 <span class="author"><i class="jam jam-user"></i><a href="/authors/skyld-labs">By Skyld Labs</a></span>
+                
+              </div>
+               <h4>What is Edge AI?</h4>
+
+<p>Edge AI is a contraction of two computer science notions: edge computing and artificial intelligence.</p>
+
+<p>According to Gartner, the edge refers to the physical location where things and people connect with the digital world. The edge is the source of data, and edge computing refers to the setting where processing data occurs at, or near, this source. The term is crafted in opposition to cloud computing, where data is sent to a central server to be processed.</p>
+
+<p>To put it simply, Edge AI is the case where artificial intelligence algorithms run in edge devices. Data is processed locally instead of being sent to a distant server. This mostly concerns the inference phase, which requires much less power than the training phase. Thus, it becomes within the reach of smartphones and other connected objects’ capabilities. With edge inference, decisions are taken in a split second, at the closest point of interaction with the user, without sharing users’ data to a distant server. </p>
+
+<p><img src="/assets/images/blog/articles/cloudvsedge.webp" width="654" height="389" loading="lazy">
+<i>Cloud AI versus Edge AI</i></p>
+
+<h4>Benefits of Edge AI</h4>
+<ul>
+<li>
+<p><b>Data privacy:</b> The data is processed where it is produced, reducing the surface attack and the leakage probability. This is a huge advantage in the healthcare and quantified self industries, that are fueled by private data. Data is distributed, which decreases the risk of a massive data breach. Also, edge AI usually destroys data after use, which is also an asset when it comes to privacy.</p>
+</li>
+<li>
+<p><b>Reduced latency:</b> Transferring data takes time, especially if it is a video or an audio stream. Edge AI brings high-performance computing at the level of the captor or the sensor, allowing real-time analysis. For example, the video game industry leverages edge AI to bring a seamless experience for the end user. It may be also critical to be able to respond in a heartbeat in a fast-moving environment, such as self-driving vehicles.</p>
+</li>
+<li>
+<p><b>Reduced costs:</b> Using edge AI results in cutting costs in backend maintenance, cloud storage, and bandwidth use.</p>
+</li>
+<li>
+<p><b>Reliability:</b> When AI is running at the edge, it does not depend on network connectivity to provide a timely response. This may be vital in transportation applications, when connectivity may not be available during the whole route.</p>
+</li>
+<li>
+<p><b>Reduced power:</b> Reducing network usage and server load also saves on energy consumption.</p>
+</li>
+</ul>
+
+<h4>Edge AI use-cases and industry examples</h4>
+<ul>
+<li>
+<p><b>Industrial IoT: </b>Edge AI can be used to bring the assembly line to the next level of automation, providing around-the-clock, reliable services. Using video analytics, AI can for example perform a visual inspection of products to detect defects.</p>
+</li>
+<li>
+<p><b>Autonomous Vehicles: </b>In autonomous vehicles, real-time analysis is critical. Whether it is for adjusting the behavior of the car at the approach of an intersection or to react to an event, decisions must be taken in mere seconds. In addition, network cover is not reliable.</p>
+</li>
+<li>
+<p><b>Healthcare: </b>Edge AI has multiple applications in healthcare. For example, it can be used as a support for diagnosis, or for patient monitoring. Privacy is paramount when dealing with health data and avoiding centralization is a winning strategy to avoid massive breaches.</p>
+</li>
+<li>
+<p><b>Smart Homes: </b>Smart homes rely only on IoT devices that collect and process data from captors and sensors around the house. Using edge AI instead of a centralized server guarantees privacy, and reduces the costs linked to cloud computing and network usage.</p>
+</li>
+</ul>
+
+<h4>Specific risks of Edge AI</h4>
+
+<ul>
+<li>
+<p><b>Data loss: </b>Data privacy is a great asset for edge AI, but data is usually discarded after processing. This data, however, could be useful to fine-tune models. That is what federated learning is for: an intricate technology that allows training at the edge.</p>
+</li>
+<li>
+<p><b>IoT security is brittle: </b>A distributed infrastructure is more difficult to secure than a centralized one. This means that you’ll have to provide additional security measures to protect your applications. For example, you can implement proactive threat detection technologies to identify suspicious behavior as early as possible. We also recommend enforcing automatic patch cycles over the devices. We can guide you in implementing these additional measures, don’t hesitate to contact us.</p>
+</li>
+<li>
+<p><b>Intellectual property: </b>This risk comes with the precedent. Without any security at the application layer, the attacker can reverse engineer your code, and your models to craft an identical application for a fraction of the cost. Think of all the time invested in acquiring, cleaning, and formatting data to train a world-class model. Our next article will be dedicated to this problem: stay tuned!</p>
+</li>
+<li>
+<p><b>Fraud and trust loss: </b>With access to the model, it is particularly easy to craft data to deceive the model. This artifact is known as an adversarial example. The attacker introduces a small noise undetectable to a human eye into the input data that will dramatically modify the inference result. This is of paramount importance for all kinds of access control models: we can imagine a machine-learning powered scanner that scans luggage for dangerous items at the airport. A knife can be forged in such a way that the system interprets it as a pencil. An attacker can also design stickers that look harmless, and stick them over signs to fool the recognition system of autonomous vehicles. The stop sign then becomes a soda can for the vehicle camera and is discarded by the car, which results in a car crash. We will dedicate an article to this kind of attacks.</p>
+</li>
+</ul>
+
+              
+              <div class="clearfix"></div>
+              <div class="space40"></div>
+              <div class="space10"></div>
+              <div class="d-lg-flex justify-content-between align-items-center meta-footer">
+                 <ul class="list-unstyled tag-list">
+                    
+                    
+                      
+                    
+                </ul>
+                <div class="space20 d-lg-none"></div>
+                <div class="d-flex align-items-center">
+                 <p class="pr-20 mb-0"><strong>Share on:</strong></p>
+<ul class="social social-mute">
+    <li>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/edgeAI" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook">
+        <i class="jam jam-facebook"></i>
+    </a>
+    </li>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=Edge%20AI:%20Benefits,%20Applications%20and%20Risks&amp;url=http://localhost:4000/edgeAI" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter">
+        <i class="jam jam-twitter"></i>
+     </a>
+    </li>
+    <!--li>
+    <a  href="http://pinterest.com/pin/create/button/?url=&media=http://localhost:4000/assets/images/blog/articles/edgeAI.webp&description=" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;" title="Share on Pinterest" >
+        <i class="jam jam-pinterest"></i>
+    </a>
+    </li-->
+    <li>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://localhost:4000/edgeAI&amp;title=Edge%20AI:%20Benefits,%20Applications%20and%20Risks&amp;summary=&amp;source=" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn">
+        <i class="jam jam-linkedin"></i>
+    </a>
+    </li>
+</ul>
+
+                </div>
+              </div>
+            </div>
+            <!-- /.post-content -->
+          </div>
+          <!-- /.post -->
+        </div>
+        <!-- /.blog -->
+      </div>
+      <!-- /column -->
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container -->
+</div>
+<!-- /.wrapper -->
+
+<div class="wrapper light-wrapper">
+  <div class="container inner-bottom">
+    <div class="row">
+      <div class="col-lg-10 offset-lg-1">
+        <h3 class="mb-30">You Might Also Like</h3>
+        <div class="grid-view">
+          <div class="carousel owl-carousel" data-margin="30" data-dots="true" data-autoplay="false" data-autoplay-timeout="5000" data-responsive='{"0":{"items": "1"}, "768":{"items": "2"}, "992":{"items": "3"}}'>
+           
+            <div class="item">
+             
+              <figure class="overlay overlay1 rounded mb-30">
+                <a href="/In-The-Spotlight-Marie-Paindavoine-Wins-the-Cyber-Woman-Award">
+                  <img class="post-thumb" src="/assets/images/blog/news/Cyber%20Women.webp" alt="In The Spotlight: Marie Paindavoine Wins The Cyber Woman Award!" loading="lazy">
+                </a>
+                <figcaption>
+                  <h5 class="from-top mb-0">Read More</h5>
+                </figcaption>
+              </figure>
+              
+              
+              <div class="category">
+                <a href="/category/news" class="badge badge-pill bg-perso">News</a>
+              </div>
+              
+              <h2 class="post-title"><a href="/In-The-Spotlight-Marie-Paindavoine-Wins-the-Cyber-Woman-Award">In The Spotlight: Marie Paindavoine Wins The Cyber Woman Award!</a></h2>
+              <div class="meta mb-0">
+              
+               <span class="date"><i class="jam jam-clock"></i>12 December 2024</span>
+              
+              </div>
+            </div>
+            <!-- /.item -->
+           
+            <div class="item">
+             
+              <figure class="overlay overlay1 rounded mb-30">
+                <a href="/Imagine-Summit-A-Day-Focused-on-Innovation">
+                  <img class="post-thumb" src="/assets/images/blog/news/Imagine%20Summit.webp" alt="Imagine Summit: A Day Focused on Innovation" loading="lazy">
+                </a>
+                <figcaption>
+                  <h5 class="from-top mb-0">Read More</h5>
+                </figcaption>
+              </figure>
+              
+              
+              <div class="category">
+                <a href="/category/news" class="badge badge-pill bg-perso">News</a>
+              </div>
+              
+              <h2 class="post-title"><a href="/Imagine-Summit-A-Day-Focused-on-Innovation">Imagine Summit: A Day Focused on Innovation</a></h2>
+              <div class="meta mb-0">
+              
+               <span class="date"><i class="jam jam-clock"></i>12 December 2024</span>
+              
+              </div>
+            </div>
+            <!-- /.item -->
+           
+            <div class="item">
+             
+              <figure class="overlay overlay1 rounded mb-30">
+                <a href="/GenerationAI-A-Vision-of-AI-Beyond-Algorithms">
+                  <img class="post-thumb" src="/assets/images/blog/news/GenAI.webp" alt="GenerationAI: A Vision of AI Beyond Algorithms" loading="lazy">
+                </a>
+                <figcaption>
+                  <h5 class="from-top mb-0">Read More</h5>
+                </figcaption>
+              </figure>
+              
+              
+              <div class="category">
+                <a href="/category/news" class="badge badge-pill bg-perso">News</a>
+              </div>
+              
+              <h2 class="post-title"><a href="/GenerationAI-A-Vision-of-AI-Beyond-Algorithms">GenerationAI: A Vision of AI Beyond Algorithms</a></h2>
+              <div class="meta mb-0">
+              
+               <span class="date"><i class="jam jam-clock"></i>12 December 2024</span>
+              
+              </div>
+            </div>
+            <!-- /.item -->
+           
+            <div class="item">
+             
+              <figure class="overlay overlay1 rounded mb-30">
+                <a href="/13-French-Startups-to-Watch-And-Skyld-Is-On-the-List">
+                  <img class="post-thumb" src="/assets/images/blog/news/Sift_French_Startups.webp" alt="13 French Startups to Watch And Skyld Is On the List!" loading="lazy">
+                </a>
+                <figcaption>
+                  <h5 class="from-top mb-0">Read More</h5>
+                </figcaption>
+              </figure>
+              
+              
+              <div class="category">
+                <a href="/category/news" class="badge badge-pill bg-perso">News</a>
+              </div>
+              
+              <h2 class="post-title"><a href="/13-French-Startups-to-Watch-And-Skyld-Is-On-the-List">13 French Startups to Watch And Skyld Is On the List!</a></h2>
+              <div class="meta mb-0">
+              
+               <span class="date"><i class="jam jam-clock"></i>12 December 2024</span>
+              
+              </div>
+            </div>
+            <!-- /.item -->
+           
+            <div class="item">
+             
+              <figure class="overlay overlay1 rounded mb-30">
+                <a href="/New-Deployments-New-Threats-How-To-Protect-Local-Ai-Models-From-Reverse-Engineering">
+                  <img class="post-thumb" src="/assets/images/blog/articles/News%20deployment%20new%20threats.webp" alt="New Deployments, New Threats: How To Protect Local AI Models From Reverse Engineering?" loading="lazy">
+                </a>
+                <figcaption>
+                  <h5 class="from-top mb-0">Read More</h5>
+                </figcaption>
+              </figure>
+              
+              
+              <div class="category">
+                <a href="/category/ml-security" class="badge badge-pill bg-perso">ML security</a>
+              </div>
+              
+              <h2 class="post-title"><a href="/New-Deployments-New-Threats-How-To-Protect-Local-Ai-Models-From-Reverse-Engineering">New Deployments, New Threats: How To Protect Local AI Models From Reverse Engineering?</a></h2>
+              <div class="meta mb-0">
+              
+               <span class="date"><i class="jam jam-clock"></i>16 September 2024</span>
+              
+              </div>
+            </div>
+            <!-- /.item -->
+           
+            <div class="item">
+             
+              <figure class="overlay overlay1 rounded mb-30">
+                <a href="/Vivatech-2024">
+                  <img class="post-thumb" src="/assets/images/blog/news/vivatech.webp" alt="Skyld At VivaTech 2024" loading="lazy">
+                </a>
+                <figcaption>
+                  <h5 class="from-top mb-0">Read More</h5>
+                </figcaption>
+              </figure>
+              
+              
+              <div class="category">
+                <a href="/category/news" class="badge badge-pill bg-perso">News</a>
+              </div>
+              
+              <h2 class="post-title"><a href="/Vivatech-2024">Skyld At VivaTech 2024</a></h2>
+              <div class="meta mb-0">
+              
+               <span class="date"><i class="jam jam-clock"></i>29 August 2024</span>
+              
+              </div>
+            </div>
+            <!-- /.item -->
+           
+          </div>
+          <!-- /.owl-carousel -->
+        </div>
+        <!-- /.grid-view -->
+      </div>
+      <!-- /column -->
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container -->
+</div>
+<!-- /.wrapper -->
+
+<footer class="image-wrapper bg-image page-title-wrapper inverse-text" data-image-src="/assets/images/art/bg_home.webp">
+  <div class="divider"><svg xmlns="http://www.w3.org/2000/svg" class="fill-light-wrapper position-absolute" preserveaspectratio="none" viewbox="0 0 1070 52">
+ <path d="M0,0S247,91,505,32c261.17-59.72,565-13,565-13V0Z"></path></svg></div>
+  <div class="space100"></div>
+  <div class="container inner">
+    <div class="row">
+
+
+      <div class="col-md-4 col-lg-3">
+        <div class="widget">
+         <a href="">
+          
+            <img src="/assets/images/logo_skyld_blanc_bottom.png" srcset="/assets/images/logo_skyld_blanc_bottom.png 1x, /assets/images/logo_skyld_blanc_top.png 2x" alt="Skyld" loading="lazy">
+            
+         </a>
+          <div class="space40"></div>
+          <p>© 2024 Skyld. All rights reserved.</p>
+        </div>
+        <!-- /.widget -->
+      </div>
+      <!-- /column -->
+
+
+      <div class="col-md-4 col-lg-3">
+        <div class="widget">
+          <h3 class="widget-title">Get in Touch</h3>
+          <!-- 
+          
+           <address>263 avenue du Général Leclerc 35700 Rennes</address>
+          
+          -->
+          <span class="social">
+            <ul class="social social-mute social-s ml-auto">
+              
+                <li><a href="https://www.linkedin.com/company/skylai/?viewAsMember=true"><img class="filter-white footer-icon" src="/assets/images/icons/linkedin.svg" loading="lazy"></a></li>
+              
+                <li><a href="https://twitter.com/SkyldAI"><img class="filter-white footer-icon" src="/assets/images/icons/twitter.svg" loading="lazy"></a></li>
+              
+                <li><a href="https://youtube.com/@SkyldAI-nv4qr?si=UIfXA8JyvToIfxAT"><img class="filter-white footer-icon" src="/assets/images/icons/youtube.svg" loading="lazy"></a></li>
+              
+                <li><a href="https://github.com/Skyld-Labs/"><img class="filter-white footer-icon" src="/assets/images/icons/github.svg" loading="lazy"></a></li>
+              
+            </ul>
+          </span>
+          <a href="mailto:contact@skyld.io">contact@skyld.io</a>
+          
+        </div>
+        <!-- /.widget -->
+      </div>
+      <!-- /column -->
+
+      <!-- learn more part
+      <div class="col-md-4 col-lg-3">
+        
+        
+        <div class="widget">
+          
+           <h5 class="widget-title">Learn More</h5>
+          
+          <ul class="list-unstyled mb-0">
+            
+            <li><a href="">About Us</a></li>
+            
+            <li><a href="">Our Story</a></li>
+            
+            <li><a href="">Projects</a></li>
+            
+          </ul>
+        </div>
+      </div>
+      <div class="space30 d-none d-md-block d-lg-none"></div>
+        -->
+        <!-- /.widget -->
+      
+      <!-- /column -->
+
+      
+      <div class="col-md-4 col-lg-3">
+        <div class="widget">
+          
+           <h3 class="widget-title">Our Newsletter</h3>
+          
+          
+           <p>Subscribe to our newsletter to get our news delivered to your inbox!</p>
+          
+          <div class="space10"></div>
+          <div class="newsletter-wrapper">
+              <div id="mc_embed_signup_scroll" class="input-group">
+                <a href="https://skyld.us21.list-manage.com/subscribe?u=015465c342fde2826f26b9627&amp;id=4dbeba2511">
+                  <button type="submit" class="btn btn-rounded btn-default mr-0 mb-0 pull-right">
+                  Subscribe
+                  </button>
+                </a>
+              </div>
+          </div>
+          <!-- /.newsletter-wrapper -->
+        </div>
+        <!-- /.widget -->
+      </div>
+      <!-- /column -->
+    </div>
+    <!--/.row -->
+  </div>
+  <!-- /.container -->
+</footer>
+</div>
+
+  
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.5.0/lite-youtube.js"></script>
+  <script src="/assets/js/jquery.min.js"></script>
+  <script src="/assets/js/popper.min.js"></script>
+  <script src="/assets/js/bootstrap.min.js"></script>
+  <script src="/assets/revolution/js/jquery.themepunch.tools.min.js"></script>
+  <script src="/assets/revolution/js/jquery.themepunch.revolution.min.js"></script>
+  <script src="/assets/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+  <script src="/assets/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
+  <script src="/assets/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+  <script src="/assets/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+  <script src="/assets/revolution/js/extensions/revolution.extension.migration.min.js"></script>
+  <script src="/assets/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+  <script src="/assets/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+  <script src="/assets/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+  <script src="/assets/revolution/js/extensions/revolution.extension.video.min.js"></script>
+  <script src="/assets/js/plugins.js"></script>
+  <script src="/assets/js/simple-jekyll-search.min.js"></script>
+  <script src="/assets/js/scripts.js"></script>
+</body>
+</html>

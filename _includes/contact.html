@@ -1,0 +1,83 @@
+{% if page.contact_form.enable %}
+<script src="https://www.google.com/recaptcha/api.js"></script>
+<div class="wrapper light-wrapper">
+
+  <div class="container pt-80">
+    <div class="row text-center gutter-60">
+      {% for contact_data in page.contact_info.contact_data %}
+      <div class="col-md-4 container">
+        {% if contact_data.icon %}
+        <div class="icon icon-svg mb-20 color-perso">
+          <img src="{{contact_data.icon}}" alt="{{contact_data.info}}" />
+        </div>
+        {% endif %}
+        {% if contact_data.info %}
+        <p class="mb-0">{{contact_data.info}}</p>
+        {% endif %}
+      </div>
+      <!--/column -->
+      {% endfor %}
+    </div>
+    <!--/.row -->
+  </div>
+  <!-- /.container -->
+
+  <div class="container inner">
+    <div class="row">
+      <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+        {% if page.contact_form.title %}
+        <h2 class="section-title text-center">{{ page.contact_form.title }}</h2>
+        {% endif %}
+        {% if page.contact_form.sub_title %}
+        <p class="text-center">{{ page.contact_form.sub_title }}</p>
+        {% endif %}
+        <div class="space30"></div>
+        <form id="contact-form" method="post" action="/contact_send.php">
+          <input type="hidden" name="source" id="url-param" value="">
+          <div class="messages"></div>
+          <div class="controls">
+            <div class="form-row">
+              {% for contact_data in page.contact_form.forms_data %}
+              {% if contact_data.field_type == "input" %}
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input id="{{contact_data.field_name}}" type="{{contact_data.input_type}}"
+                    name="{{contact_data.field_name}}" class="form-control" placeholder="{{contact_data.placeholder}} *"
+                    required="required" data-error="{{contact_data.error_message}}">
+                  <div class="help-block with-errors"></div>
+                </div>
+              </div>
+              {% else if contact_data.field_type == "textarea" %}
+              <div class="col-md-12">
+                <div class="form-group">
+                  <textarea id="{{contact_data.field_name}}" name="{{contact_data.field_name}}" class="form-control"
+                    placeholder="{{contact_data.placeholder}} *" rows="4" required="required"
+                    data-error="{{contact_data.error_message}}"></textarea>
+                  <div class="help-block with-errors"></div>
+                </div>
+              </div>
+              {% endif %}
+              {% endfor %}
+            </div>
+            <div class="form-row">
+              <div class="col-md-12 text-center">
+                <button class="g-recaptcha btn btn-send btn-default" data-sitekey="6LeFalwqAAAAAD941u2YBsgPCOcwzXCx3Qa6bRPo"
+                  data-callback='onSubmit' data-action='submit'>Send message</button>
+              </div>
+            </div>
+          </div>
+        </form>
+        <script>function onSubmit(token) {
+            document.getElementById("contact-form").submit();
+          }</script>
+        <script src="/assets/js/contact.js"></script>
+        <!-- /form -->
+      </div>
+      <!-- /column -->
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container -->
+</div>
+<!-- /.wrapper -->
+{% endif %}

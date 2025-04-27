@@ -1,0 +1,18 @@
+main_menu:
+    
+  - text: "Home"
+    url: "/"
+    submenu:
+      - text: "Contact"
+        url: "/contact"
+
+  - text: "Blog"
+    url: "/blogs"
+    submenu:
+      - text: "News"
+        url: "/blogs/index-news"
+      - text: "Articles"
+        url: "/blogs/index-articles"
+
+
+  

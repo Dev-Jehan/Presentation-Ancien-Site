@@ -1,0 +1,44 @@
+---
+layout: page
+title: "Webinar registration"
+bg_image: "/assets/images/art/bg_home.webp"
+no_index: true
+
+form:
+  enable: true
+  title: "Model Extraction: Why You Should Care and How to Protect Yourself?"
+  sub_title: "January 10<sup>th</sup>, 2024 at 1:30 - 2:00 PM (Europe/Paris UTC+1)"
+  url: "/form-register.php"
+  action: "Register"
+  forms_data:
+    - field_type: "input"
+      field_name: "user_first_name"
+      placeholder: "First Name" 
+      input_type: "text"
+      error_message: "First Name Is required"
+
+    - field_type: "input"
+      field_name: "user_last_name"
+      placeholder: "Last Name" 
+      input_type: "text"
+      error_message: "Last Name Is required"
+
+    # - field_type: "input"
+    #   field_name: "user_phone"
+    #   placeholder: "Phone Number" 
+    #   input_type: "tel"
+    #   error_message: "Phone Number Is required"
+
+    - field_type: "input"
+      field_name: "user_email"
+      placeholder: "Email"
+      input_type: "email"
+      error_message: "Email Is required"
+
+    - field_type: "input"
+      field_name: "newsletter"
+      input_type: "checkbox"
+      label: "Also suscribe to the newsletter"
+---
+
+{% include form.html %}

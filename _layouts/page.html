@@ -1,0 +1,47 @@
+---
+layout: default
+header_image: "/assets/images/art/bg_home.webp"
+white_menu: true
+---
+
+{% if page.white_menu %}
+  {% if page.header_style == 'two' %}
+    {% include header.html extra_class="transparent  nav-uppercase" logo_class="logo" container_class="container"%}
+  {% else %}
+    {% include header.html extra_class="absolute transparent inverse-text nav-uppercase" light_logo="true"  container_class="container"%}
+  {% endif %}
+  {% if page.header_style == 'one' %}
+    {% include header.html extra_class="absolute transparent inverse-text nav-uppercase" light_logo="true"  container_class="container"%}
+  {% endif %}
+{% elsif page.black_menu %}
+  {% if page.header_style == 'one' %}
+    {% include header.html extra_class="transparent navbar-hover-opacity nav-uppercase" logo_class="logo" container_class="container" %}
+  {% elsif page.header_style == 'two' %}
+    {% include header.html extra_class="absolute transparent" logo_class="logo" container_class="container" %}
+  {% elsif page.header_style == 'three' %}
+    {% include header.html extra_class="transparent" logo_class="logo" container_class="container" alignment_class="ml-auto" %}
+  {% else %}
+    {% include header.html extra_class="transparent" logo_class="logo" container_class="container" %}
+  {% endif %}
+{% endif %}
+
+{% include header.html extra_class="absolute transparent inverse-text" light_logo="true" container_class="container" %}
+
+<div class="wrapper image-wrapper bg-image page-title-wrapper inverse-text" data-image-src={{page.bg_image}} >
+  <div class="container inner text-center">
+    <div class="row">
+      <div class="col-md-8 mx-auto">
+        <div class="space90"></div>
+        <h1 class="page-title text-capitalize">{{page.title}}</h1>
+      </div>
+    </div>
+    <!--/.row -->
+  </div>
+  <!-- /.container -->
+  {% include divider.html %}
+</div>
+ <!-- /.wrapper -->
+
+{{content}}
+
+{% include footer.html light_logo="true" %}

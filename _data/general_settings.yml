@@ -1,0 +1,105 @@
+# General Settings
+title: "Skyld"
+email: "contact@skyld.io"
+email_2: "support@tortoizthemes.com"
+description: >- # this means to ignore newlines until "baseurl:"
+  Skyld provides a SDK to secure on-device ML models against reverse-engineering
+
+black_logo_1x: "/assets/images/logo_skyld_small.png"
+black_logo_2x: "/assets/images/logo_skyld_small.png"
+light_logo_1x: "/assets/images/logo_skyld_blanc_bottom.png"
+light_logo_2x: "/assets/images/logo_skyld_blanc_top.png"
+
+address_01: '263 avenue du Général Leclerc 35700 Rennes'
+# phone_number: "+00 (123) 456 78 90"
+copyright_text: "© 2024 Skyld. All rights reserved."
+
+google_analytics:
+  enable: true
+  key: "GTM-NXVH3Q2M"  # UA-664136761-1
+
+google_map: |
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.4564967931838!2d-122.03250858386237!3d37.33169997984258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb5b6e94ffe23%3A0x63bb79532baa6af4!2sApple+Campus!5e0!3m2!1sen!2str!4v1553850783971!5m2!1sen!2str" style="width:100%; height: 100%; border:0" allowfullscreen=""></iframe>
+
+social_accounts:
+  title: "Follow Us"
+  links:
+    - url: "https://www.linkedin.com/company/skylai/?viewAsMember=true"
+      icon: "/assets/images/icons/linkedin.svg"
+
+    - url: "https://twitter.com/SkyldAI"
+      icon: "/assets/images/icons/twitter.svg"
+
+    - url: "https://youtube.com/@SkyldAI-nv4qr?si=UIfXA8JyvToIfxAT"
+      icon: "/assets/images/icons/youtube.svg"
+
+    - url: "https://github.com/Skyld-Labs/"
+      icon: "/assets/images/icons/github.svg"
+      
+    
+
+
+external_links:
+  title: "Learn More"
+  links:
+    - url: "#"
+      text: "About Us"
+    - url: "#"
+      text: "Our Story"
+    - url: "#"
+      text: "Projects"
+
+
+external_links_02:
+  title: "Need Help?"
+  links:
+    - url: "#"
+      text: "Support"
+    - url: "#"
+      text: "Contact Us"
+    - url: "#"
+      text: "Terms of Use"
+    - url: "#"
+      text: "Privacy Policy"
+
+
+external_links_03:
+  title: "Company"
+  links:
+    - url: "#"
+      text: "Our Team"
+    - url: "#"
+      text: "Mission"
+
+footer_newsletter:
+  title: "Our Newsletter"
+  sub_title: "Subscribe to our newsletter to get our news delivered to your inbox!"
+  subscribe_button_text: "Subscribe"
+
+
+one_page_nav_settings:
+  links:
+    - text: "Home"
+      url: "#home"
+    - text: "Services"
+      url: "#services"
+    - text: "Experiences"
+      url: "#experiences"
+    - text: "Portfolio"
+      url: "#portfolio"
+    - text: "Testimonials"
+      url: "#testimonials"
+    - text: "Contact"
+      url: "#contact"
+
+author_page_header:
+  header_background_image: "/assets/images/art/bg_home.webp"
+
+gallery:
+  images:
+  - img: "/assets/images/partners/inria.svg"
+  - img: "/assets/images/partners/skydeck.svg"
+  - img: "/assets/images/partners/hope.jpg"
+  - img: "/assets/images/partners/TUITO.png"
+  - img: "/assets/images/partners/poool.png"
+  - img: "/assets/images/partners/Willa.jpg"

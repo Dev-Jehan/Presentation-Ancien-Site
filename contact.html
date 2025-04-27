@@ -1,0 +1,56 @@
+---
+layout: page
+title: "Contact Us"
+bg_image: "/assets/images/art/bg_home.webp"
+
+contact_info:
+  enable: true
+  contact_data:
+    - icon: "/assets/images/icons/adress.svg"
+      info: "263 avenue du Général Leclerc<br>35700 Rennes"
+
+    - icon: "/assets/images/icons/mail.svg"
+      info:
+      - "contact@skyld.io"
+
+contact_form:
+  enable: true
+  title: "Request a demo"
+  sub_title: "For more information please get in touch using the form below:"
+  action_email: "contact@skyld.io"
+  bg_image: "/assets/images/art/bg20.jpg"
+  forms_data: 
+
+    - field_type: "input"
+      field_name: "user_first_name"
+      placeholder: "First Name" 
+      input_type: "text"
+      error_message: "First Name Is required"
+
+    - field_type: "input"
+      field_name: "user_last_name"
+      placeholder: "Last Name" 
+      input_type: "text"
+      error_message: "Last Name Is required"
+
+    - field_type: "input"
+      field_name: "user_phone"
+      placeholder: "Phone Number" 
+      input_type: "tel"
+      error_message: "Phone Number Is required"
+
+    - field_type: "input"
+      field_name: "user_email"
+      placeholder: "Email"
+      input_type: "email"
+      error_message: "Email Is required"
+
+    - field_type: "textarea"
+      field_name: "user_message"
+      placeholder: "Message"
+      error_message: "Message Is required"
+  
+---
+
+
+{% include contact.html %}

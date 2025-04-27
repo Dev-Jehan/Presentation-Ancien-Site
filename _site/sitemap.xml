@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  
+  
+  
+      <url>
+        <loc>http://localhost:4000/contact</loc>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+       </url>
+  
+  
+  
+  
+  
+      <url>
+        <loc>http://localhost:4000/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+       </url>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      <url>
+        <loc>http://localhost:4000/category/edge-ai/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+       </url>
+  
+  
+  
+      <url>
+        <loc>http://localhost:4000/category/article/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+       </url>
+  
+  
+  
+      <url>
+        <loc>http://localhost:4000/category/ml-security/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+       </url>
+  
+  
+  
+      <url>
+        <loc>http://localhost:4000/category/news/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+       </url>
+  
+  
+  
+      <url>
+        <loc>http://localhost:4000/blogs/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+       </url>
+  
+  
+  
+      <url>
+        <loc>http://localhost:4000/blogs/page/2/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+       </url>
+  
+  
+  
+      <url>
+        <loc>http://localhost:4000/blogs/page/3/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+       </url>
+  
+  
+  
+      <url>
+        <loc>http://localhost:4000/blogs/index-articles/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+       </url>
+  
+  
+  
+      <url>
+        <loc>http://localhost:4000/blogs/index-articles/page/2/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+       </url>
+  
+  
+  
+      <url>
+        <loc>http://localhost:4000/blogs/index-news/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+       </url>
+  
+  
+  
+      <url>
+        <loc>http://localhost:4000/blogs/index-news/page/2/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+       </url>
+  
+  
+  
+  
+  
+      <url>
+        <loc>http://localhost:4000/In-The-Spotlight-Marie-Paindavoine-Wins-the-Cyber-Woman-Award</loc>
+       </url>
+  
+      <url>
+        <loc>http://localhost:4000/Imagine-Summit-A-Day-Focused-on-Innovation</loc>
+       </url>
+  
+      <url>
+        <loc>http://localhost:4000/GenerationAI-A-Vision-of-AI-Beyond-Algorithms</loc>
+       </url>
+  
+      <url>
+        <loc>http://localhost:4000/13-French-Startups-to-Watch-And-Skyld-Is-On-the-List</loc>
+       </url>
+  
+      <url>
+        <loc>http://localhost:4000/New-Deployments-New-Threats-How-To-Protect-Local-Ai-Models-From-Reverse-Engineering</loc>
+       </url>
+  
+      <url>
+        <loc>http://localhost:4000/Vivatech-2024</loc>
+       </url>
+  
+      <url>
+        <loc>http://localhost:4000/Skyld-Joins-The-New-Season-of-Thales-Cyber@StationF!</loc>
+       </url>
+  
+      <url>
+        <loc>http://localhost:4000/Skyld-Joins-NVIDIA's-Inception-Program-For-Startups</loc>
+       </url>
+  
+      <url>
+        <loc>http://localhost:4000/Skyld-In-Wavestone's-Radar</loc>
+       </url>
+  
+      <url>
+        <loc>http://localhost:4000/Attack-On-AI-models-What-You-Need-to-Know</loc>
+       </url>
+  
+      <url>
+        <loc>http://localhost:4000/What-Are-the-Three-Types-of-Artificial-Intelligence-Learning-and-Their-Specific-Features</loc>
+       </url>
+  
+      <url>
+        <loc>http://localhost:4000/WAICF-2024</loc>
+       </url>
+  
+      <url>
+        <loc>http://localhost:4000/Skyld-in-the-spotlightfor-broadcost-live-on-TV-Rennes</loc>
+       </url>
+  
+      <url>
+        <loc>http://localhost:4000/Skyld-Creator-Morning</loc>
+       </url>
+  
+      <url>
+        <loc>http://localhost:4000/reverse-ingeneer-android-app</loc>
+       </url>
+  
+      <url>
+        <loc>http://localhost:4000/Ml-models-hidden</loc>
+       </url>
+  
+      <url>
+        <loc>http://localhost:4000/Skyld-at-the-ESCO-Startup-award-finals</loc>
+       </url>
+  
+      <url>
+        <loc>http://localhost:4000/model-extraction</loc>
+       </url>
+  
+      <url>
+        <loc>http://localhost:4000/model-inversion-attacks</loc>
+       </url>
+  
+      <url>
+        <loc>http://localhost:4000/Protect-your-on-device-AI-Algorithms</loc>
+       </url>
+  
+      <url>
+        <loc>http://localhost:4000/Expert-series</loc>
+       </url>
+  
+      <url>
+        <loc>http://localhost:4000/edgeAI</loc>
+       </url>
+  
+  
+</urlset>
